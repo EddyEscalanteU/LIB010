@@ -100,3 +100,64 @@ SELECT * FROM [Person].[PhoneNumberType] PNT
 
 --181
 SELECT * FROM [Person].[StateProvince] SP
+
+	
+--------------------------------------------------------------------------------
+----------------------------[Sales]--------------------------------------------
+--------------------------------------------------------------------------------
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME in (
+'CountryRegionCurrency',
+'CreditCard',
+'Currency',
+'CurrencyRate',
+'Customer',
+'PersonCreditCard',
+'SalesOrderDetail',
+'SalesOrderHeader',
+'SalesOrderHeaderSalesReason',
+'SalesPerson',
+'SalesPersonQuotaHistory',
+'SalesReason',
+'SalesTaxRate',
+'SalesTerritory',
+'SalesTerritoryHistory',
+'ShoppingCartItem',
+'SpecialOffer',
+'SpecialOfferProduct',
+'Store'
+)
+--109
+SELECT *
+FROM AdventureWorks2022.Sales.SpecialOfferProduct
+
+
+--109
+SELECT *
+FROM AdventureWorks2022.Sales.CountryRegionCurrency SRC
+
+--19.118
+SELECT *
+FROM AdventureWorks2022.Sales.CreditCard CC
+
+--105
+SELECT *
+FROM AdventureWorks2022.Sales.Currency C
+
+
+--13.532
+SELECT *
+FROM AdventureWorks2022.Sales.CurrencyRate CR
+
+--19.820
+SELECT *
+FROM AdventureWorks2022.Sales.Customer CU
+
+--19.118
+SELECT *
+FROM AdventureWorks2022.Sales.PersonCreditCard PCC
+
+--121.317
+SELECT *
+FROM AdventureWorks2022.Sales.SalesOrderDetail SOD
