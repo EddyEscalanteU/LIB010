@@ -111,3 +111,39 @@ FROM AdventureWorks2022.[Person].[Person] P
 	INNER JOIN AdventureWorks2022.[Person].[EmailAddress] EA ON P.BusinessEntityID = EA.BusinessEntityID
 
 
+--------------------------------------------------------------------------------
+----------------------------[Purchasing]----------------------------------------
+--------------------------------------------------------------------------------
+
+IF OBJECT_ID ('D_ProductVendor') IS NOT NULL DROP TABLE D_ProductVendor;
+GO
+
+SELECT *
+INTO D_ProductVendor
+FROM AdventureWorks2022.Purchasing.ProductVendor PV
+
+----------------
+
+IF OBJECT_ID ('D_PurchaseOrderDetail') IS NOT NULL DROP TABLE D_PurchaseOrderDetail;
+GO
+
+SELECT *
+INTO D_PurchaseOrderDetail
+FROM AdventureWorks2022.Purchasing.PurchaseOrderDetail POD
+
+
+------------
+
+
+IF OBJECT_ID ('F_PurchaseOrderHeader') IS NOT NULL DROP TABLE F_PurchaseOrderHeader;
+GO
+
+--UNIR POH + SH + V
+SELECT POH.*, SH.Name ShipName, SH.ShipBase, SH.ShipRate, 
+V.AccountNumber, V.Name VendorName, V.CreditRating, V.PreferredVendorStatus, V.ActiveFlag
+INTO F_PurchaseOrderHeader
+FROM AdventureWorks2022.Purchasing.PurchaseOrderHeader POH
+INNER JOIN AdventureWorks2022.Purchasing.ShipMethod SH ON POH.ShipMethodID = SH.ShipMethodID
+INNER JOIN AdventureWorks2022.Purchasing.Vendor V ON POH.VendorID = V.BusinessEntityID
+
+

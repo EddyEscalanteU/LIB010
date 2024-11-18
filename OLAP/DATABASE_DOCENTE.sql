@@ -161,3 +161,32 @@ FROM AdventureWorks2022.Sales.PersonCreditCard PCC
 --121.317
 SELECT *
 FROM AdventureWorks2022.Sales.SalesOrderDetail SOD
+
+
+	
+--------------------------------------------------------------------------------
+----------------------------[Purchasing]----------------------------------------
+--------------------------------------------------------------------------------
+
+--460
+SELECT *
+FROM AdventureWorks2022.Purchasing.ProductVendor PV
+
+
+--8845
+SELECT *
+FROM AdventureWorks2022.Purchasing.PurchaseOrderDetail POD
+
+
+--4012
+SELECT *
+FROM AdventureWorks2022.Purchasing.PurchaseOrderHeader POH
+
+
+--5
+SELECT *
+FROM AdventureWorks2022.Purchasing.ShipMethod SH
+
+--104
+SELECT *
+FROM AdventureWorks2022.Purchasing.Vendor V
